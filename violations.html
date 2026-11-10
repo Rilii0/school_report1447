@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>كتيب المخالفات السلوكية</title>
+<style>
+:root{--bg:#d9e2ee;--page:#fff;--tx:#1b2430;--mut:#667085;--ac:#1f4e78;--acs:#e3edf8;--bd:#e1e5ec;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1018;--page:#17212f;--tx:#e8edf4;--mut:#9aa7b8;--ac:#7db4e6;--acs:#233a54;--bd:#26344a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1018;--page:#17212f;--tx:#e8edf4;--mut:#9aa7b8;--ac:#7db4e6;--acs:#233a54;--bd:#26344a;color-scheme:dark}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{height:100%;margin:0;background:var(--bg);color:var(--tx);font-family:Tajawal,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.6;display:flex;flex-direction:column;align-items:center}
+#stage{flex:1;min-height:0;width:100%;max-width:900px;padding:12px;box-sizing:border-box;perspective:1400px}
+#page{height:100%;box-sizing:border-box;overflow-y:auto;background:var(--page);border-radius:6px 16px 16px 6px;border-right:8px solid var(--ac);box-shadow:0 8px 30px #0003;padding:18px;transform-origin:right center}
+.n{animation:tn .5s ease}.p{animation:tp .5s ease}
+@keyframes tn{from{transform:rotateY(75deg);opacity:.15}to{transform:none;opacity:1}}
+@keyframes tp{from{transform:rotateY(-40deg);opacity:.15}to{transform:none;opacity:1}}
+h1{font-size:1.5rem;color:var(--ac);margin:0 0 4px}h2{font-size:1.2rem;color:var(--ac);margin:0 0 10px}
+.sub{color:var(--mut);margin:0 0 14px;font-size:.9rem}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:12px}
+.kpi{background:var(--acs);border-radius:10px;padding:8px 12px}.kpi b{display:block;font-size:1.35rem;color:var(--ac)}.kpi span{font-size:.8rem;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-bottom:12px}
+.card{border:1px solid var(--bd);border-radius:12px;padding:10px 12px}.card h3{margin:0 0 6px;font-size:.95rem}
+svg{width:100%;height:auto;display:block}
+.gl{stroke:var(--bd)}.ax{fill:var(--mut);font-size:11px}.hit{cursor:pointer}.hit:hover{opacity:.75}
+.tip{margin-top:6px;padding:5px 10px;border-radius:8px;background:var(--acs);font-size:.85rem;min-height:1.4em}
+.lg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8rem;margin-top:4px}.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px}
+.note{background:var(--acs);border-radius:10px;padding:8px 12px;font-size:.85rem;margin-bottom:12px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.85rem;text-align:center}th,td{border:1px solid var(--bd);padding:5px 7px}th{background:var(--ac);color:var(--page)}tfoot td{font-weight:700;background:var(--acs)}
+.toc button{display:block;width:100%;text-align:start;font:inherit;color:var(--tx);background:var(--acs);border:0;border-radius:10px;padding:10px 14px;margin:6px 0;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}.chips b{font-size:.8rem;color:var(--mut);align-self:center;margin-inline-end:4px}.chips button{font:inherit;font-size:.85rem;border:1px solid var(--bd);background:var(--page);color:var(--tx);border-radius:16px;padding:4px 12px;cursor:pointer}.chips button.on{background:var(--ac);color:var(--page);border-color:var(--ac)}.ins{margin:0;padding-inline-start:20px}.ins li{margin:4px 0}
+.big{font-size:3.4rem;font-weight:700;color:var(--ac);line-height:1.1;margin:18px 0 0}
+#bar{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;max-width:900px;box-sizing:border-box;padding:6px 14px 12px}
+#bar button{font:inherit;border:0;border-radius:20px;padding:8px 18px;background:var(--ac);color:var(--page);cursor:pointer}#bar button:disabled{opacity:.35}
+#dots{display:flex;gap:6px}#dots b{width:9px;height:9px;border-radius:50%;background:var(--mut);opacity:.35;cursor:pointer}#dots b.on{opacity:1;background:var(--ac);width:22px;border-radius:5px}
+
+#pr{display:none}
+@media print{
+ @page{size:A4;margin:12mm}
+ html,body{height:auto!important;background:#fff!important;display:block!important}
+ #stage,#bar{display:none!important}
+ #pr{display:block!important}
+ #pr section{break-after:page;page-break-after:always;color:#1b2430;background:#fff;padding:0}
+ #pr section:last-child{break-after:auto;page-break-after:auto}
+ #pr *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ #pr .card,#pr .kpi{break-inside:avoid}
+ #pr .tip,#pr .toc,#pr .note.noprint,#pr .prbtn{display:none!important}
+ #pr .grid{grid-template-columns:1fr 1fr}
+ #pr{--page:#fff;--tx:#1b2430;--mut:#667085;--ac:#1f4e78;--acs:#e3edf8;--bd:#cfd6e0}
+}
+.prbtn{font:inherit;margin-top:14px;border:1px solid var(--ac);background:transparent;color:var(--ac);border-radius:20px;padding:8px 18px;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="stage"><div id="page"></div></div>
+<div id="pr"></div>
+<div id="bar"><button id="pv">▶ السابق</button><div id="dots"></div><button id="nx">التالي ◀</button></div>
+<script>
+const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const sum=a=>a.reduce((x,y)=>x+y,0);
+const T=["امتهان الكتب الدراسية", "النوم داخل الفصل", "عدم التقيد بالزي المدرسي", "الشجار أو المضاربة", "الإشارة بحركات مخلة بالأدب", "التصوير أو التسجيل الصوتي", "إحضار/استخدام مواد أو ألعاب", "العبث بتجهيزات المدرسة", "عدم حضور الاصطفاف الصباحي", "عدم حضور الحصة الدراسية", "التلفظ بكلمات نابية", "التأخر الصباحي", "إثارة الفوضى داخل الفصل", "التعرض لأحد الطلبة بالضرب"];
+const C=["#8a8f98","#7c5cbf","#2f6fb0","#d4453b","#b24b8f","#c9a227","#e08a2c","#4b8f8c","#3a9d6e","#5a7bd0","#a0522d","#e0b43c","#d96b3a","#7a1f1f"];
+const DG={1:'الأولى',2:'الثانية',3:'الثالثة',15:'الخامسة'},DC={1:'#e0b43c',2:'#e08a2c',3:'#d4453b',15:'#7a1f1f'},DK=[1,2,3,15];
+// السجل: [سنة، شهر، يوم، نوع، الطالبة، الخصم]
+const R=[[1447,5,18,0,"تالا الزهراني",2],[1447,8,3,1,"تولين شراز الزهراني",1],[1447,5,4,1,"فاطمه ال فهد",1],[1447,8,8,2,"رفيف اسماعيل",1],[1447,5,21,2,"جود الشهري",1],[1447,5,21,2,"روى بنت حسن",1],[1447,5,21,2,"تالين محبوب",1],[1447,5,21,2,"لين الشمراني",1],[1447,5,21,2,"لانا منصور",1],[1447,5,21,2,"ليان المالكي",1],[1447,8,16,3,"دانه المسعري",2],[1447,5,4,4,"شيماء جعفري",2],[1447,5,1,4,"شيماء جعفري",15],[1447,6,19,5,"ليان الشمراني",3],[1447,8,10,5,"جوان الزهراني",3],[1447,4,28,6,"ألين مطاعن",3],[1447,4,22,6,"ألين مطاعن",3],[1447,4,22,6,"امجاد فلقي",3],[1447,4,28,6,"امجاد فلقي",3],[1447,5,22,7,"ريتال القرني",2],[1447,5,15,7,"جوان الزهراني",2],[1447,5,15,7,"الين الحكمي",2],[1447,4,16,7,"رواسي دوسري",2],[1447,4,28,8,"روز عسيري",1],[1447,4,28,8,"ريوف الزهراني",1],[1447,4,28,8,"غلا الزبيدي",1],[1447,4,22,8,"دانه الغامدي",1],[1447,4,22,8,"جوان بن ابراهيم",1],[1447,4,28,8,"جوان بن ابراهيم",1],[1447,4,22,8,"الهام حكمي",1],[1447,6,24,9,"جواهر القرني",2],[1447,4,2,9,"الين السميري",2],[1447,6,24,9,"جود الشهري",2],[1447,4,13,9,"البندري مصيبيح",2],[1447,4,28,9,"البندري مصيبيح",2],[1447,4,2,9,"سديم خضيري",2],[1447,4,28,9,"تالين الجهني",2],[1447,4,13,9,"تالين الجهني",2],[1447,4,2,9,"نادين جوهري",2],[1447,4,2,9,"غنى الرشيدي",2],[1447,4,2,9,"وريف الزهراني",2],[1447,4,23,9,"نوف الخضيري",2],[1447,4,28,9,"صفية العولقي",2],[1447,9,6,9,"صفية العولقي",2],[1447,9,6,9,"رتيل العيسي",2],[1447,9,6,9,"رفيف الزهراني",2],[1447,4,28,9,"لين معلوف",2],[1447,4,13,10,"سجى الزهراني",2],[1447,5,6,10,"نورا الحسني",2],[1447,5,5,11,"افنان الزهراني",1],[1447,10,18,11,"افنان الزهراني",1],[1447,5,5,11,"رولين بخاري",1],[1447,4,28,11,"رولين بخاري",1],[1447,10,18,11,"رفيف اسماعيل",1],[1447,5,25,11,"رفيف اسماعيل",1],[1447,5,25,11,"غلا صرخي",1],[1447,5,4,11,"ديالا راجح",1],[1447,5,25,11,"ديالا راجح",1],[1447,5,4,11,"جواهر القرني",1],[1447,5,4,11,"ديالا الزهراني",1],[1447,5,25,11,"ديالا الزهراني",1],[1447,4,16,11,"تيجان الأديسي",1],[1447,4,16,11,"رتيل العبدلي",1],[1447,4,16,11,"تالين اليماني",1],[1447,4,2,11,"لمى غزواني",1],[1447,4,16,11,"ليان الشمراني",1],[1447,10,18,11,"صبا خضير",1],[1447,5,25,11,"لارا عسيري",1],[1447,4,2,11,"لارا عسيري",1],[1447,4,16,11,"لارا عسيري",1],[1447,10,18,11,"لمار الفقيه",1],[1447,4,16,11,"غنى الرشيدي",1],[1447,4,2,11,"شهد الغامدي",1],[1447,4,16,11,"شهد الغامدي",1],[1447,5,4,11,"مريم عبدالوهاب",1],[1447,4,2,11,"الين الخبيري",1],[1447,4,16,11,"الين الخبيري",1],[1447,5,25,11,"غنى بخاري",1],[1447,5,4,11,"تالا اليحياوي",1],[1447,5,4,11,"رتيل العيسي",1],[1447,5,25,11,"رتيل العيسي",1],[1447,5,4,11,"تالا المجايشي",1],[1447,5,25,11,"رنيم المسيحي",1],[1447,10,18,11,"رغد الجابري",1],[1447,5,25,11,"رغد الجابري",1],[1447,5,4,11,"سوسن النعمي",1],[1447,5,25,11,"العنود بنت محمد",1],[1447,5,25,11,"لمى البيشي",1],[1447,5,4,11,"ميار المالكي",1],[1447,5,4,11,"ميلاف البقمي",1],[1447,10,18,11,"ميرال زمه",1],[1447,5,4,11,"نسايم الزهراني",1],[1447,5,6,11,"وتين كرباس",1],[1447,4,2,11,"شيماء جعفري",1],[1447,5,4,11,"شيماء جعفري",1],[1447,5,4,11,"ميلا الثعلبي",1],[1447,10,18,11,"جيهان الصمداني",1],[1447,5,25,11,"جيهان الصمداني",1],[1447,4,15,11,"روان المسبحي",1],[1447,5,25,11,"ايه الزهراني",1],[1447,5,25,11,"ايه الزهراني",1],[1447,4,15,11,"صبا المجايشي",1],[1447,4,15,11,"جودي زهراني",1],[1447,5,18,11,"جودي زهراني",1],[1447,10,18,11,"جودي زهراني",1],[1447,4,13,11,"لارا موسى",1],[1447,5,25,11,"لارا موسى",1],[1447,4,15,11,"سولافه الزهراني",1],[1447,4,28,12,"رودينا الغامدي",2],[1447,4,13,12,"رودينا الغامدي",2],[1447,5,4,12,"اريج الجوفي",2],[1447,4,3,12,"اريج الجوفي",2],[1447,4,28,12,"غنى دريب",2],[1447,4,13,12,"غنى دريب",2],[1447,6,12,12,"دانه القرني",2],[1447,8,10,12,"ميلا الزهراني",2],[1447,8,23,12,"روز الزهراني",2],[1447,8,23,12,"ربى الزهراني",2],[1447,8,1,12,"جوري القحطاني",2],[1447,8,2,12,"بشرى الزهراني",2],[1447,8,16,12,"الهنوف العصيري",2],[1447,6,12,12,"تولين باشوت",2],[1447,7,2,12,"تولين باشوت",2],[1447,4,28,12,"تولين باشوت",2],[1447,7,2,12,"لانا جليدي",2],[1447,4,29,12,"غاليه بايزيد",2],[1447,8,16,12,"لانا بديره",2],[1447,4,28,12,"ميلا الحربي",2],[1447,8,20,12,"شيماء جعفري",2],[1447,6,11,12,"غلا الحارثي",2],[1447,8,10,12,"رواسي دوسري",2],[1447,6,16,12,"جنان القرني",2],[1447,4,23,12,"ريتال القرني",2],[1447,6,12,12,"ريتال القرني",2],[1447,6,12,12,"فاطمه الشيخي",2],[1448,4,24,10,"سالي المعلوي",2],[1448,5,10,10,"لارين الكثيري",2],[1448,5,10,10,"لدن القرني",2],[1448,5,16,10,"حور الزهراني",2],[1448,3,20,9,"رودينا الغامدي",2],[1448,4,16,7,"تولين شراز الزهراني",2],[1448,5,25,12,"تولين شراز الزهراني",2],[1448,4,24,12,"فاطمه الشيخي",2],[1448,5,25,12,"فاطمه الشيخي",2],[1448,5,25,12,"عائشه الحوباني",2],[1448,4,24,12,"تولين العمري",2],[1448,5,25,12,"عذاري السعيد",2],[1448,5,25,12,"وتين السعدي",2],[1448,4,18,3,"جوري الشهري",2],[1448,4,16,3,"ريتاج الغبيشي",2],[1448,4,4,3,"جوري القحطاني",2],[1448,5,16,3,"حورية مسفر",2],[1448,4,6,3,"ساره سيفين",2],[1448,4,3,3,"ريهام السهيمي",2],[1448,4,3,3,"غاليه بايزيد",2],[1448,4,18,3,"لينا الشماسي",2],[1448,4,16,3,"زينه ال فهاد",2],[1448,4,23,3,"نسايم الزهراني",2],[1448,5,16,3,"نسايم الزهراني",2],[1448,4,6,3,"جوان الحنيشي",2],[1448,3,27,3,"فاطمة بنت رياض",2],[1448,4,23,3,"روان المسبحي",2],[1448,4,18,3,"روين العيسي",2],[1448,5,16,3,"جواهر ابوزيد",2],[1448,4,23,11,"جواهر القرني",1],[1448,5,9,11,"ايلين حكمي",1],[1448,5,16,11,"دانه الزهراني",1],[1448,5,9,11,"الين المعيلي",1],[1448,5,9,11,"لانا بديره",1],[1448,4,23,11,"العنود بنت محمد",1],[1448,5,9,11,"العنود بنت محمد",1],[1448,5,17,11,"العنود بنت محمد",1],[1448,5,9,11,"رفيف العطوي",1],[1448,4,23,11,"شهد البقمي",1],[1448,4,23,11,"ميلا الثعلبي",1],[1448,4,9,11,"جودي زهراني",1],[1448,5,9,11,"جودي زهراني",1],[1448,5,9,11,"حور الهمامي",1],[1448,4,23,11,"سمو العلياني",1],[1448,4,9,11,"لين البطي",1],[1448,5,9,11,"ميادة جعفري",1],[1448,5,16,2,"صالحه الشمراني",1],[1448,5,16,2,"رفيف مطاعن",1],[1448,5,16,13,"سولافه الزهراني",3]];
+const YM={1447:[4,5,6,7,8,9,10],1448:[3,4,5]};
+const GS={1447:{4:[2025,9,23,30],5:[2025,10,23,30],6:[2025,11,22,29],7:[2025,12,21,30],8:[2026,1,20,29],9:[2026,2,18,30],10:[2026,3,20,29]},1448:{3:[2026,8,14,29],4:[2026,9,12,30],5:[2026,10,12,30]}};
+const MN=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const gdt=(y,m,d)=>{const [Y,M,D]=GS[y][m];return new Date(Date.UTC(Y,M-1,D+d-1))};
+const gfmt=(dt,wy)=>ar(dt.getUTCDate())+' '+MN[dt.getUTCMonth()]+(wy?' '+ar(dt.getUTCFullYear())+'م':'');
+const grange=(y,m)=>{const x=gdt(y,m,1),z=gdt(y,m,GS[y][m][3]);return gfmt(x,x.getUTCFullYear()!=z.getUTCFullYear())+' – '+gfmt(z,true)};
+let M,cy,RS,F;const FY={};
+const ALLT=T.map((_,i)=>i);
+function ctx(y){cy=y;M=YM[y];RS=R.filter(r=>r[0]==y);if(!FY[y])FY[y]={m:new Set(M),t:new Set(ALLT)};F=FY[y]}
+const rm=m=>RS.filter(r=>r[1]==m);
+const tcnt=l=>T.map((_,i)=>l.filter(r=>r[3]==i).length);
+const dcnt=l=>DK.map(k=>l.filter(r=>r[5]==k).length);
+const ded=l=>sum(l.map(r=>r[5]));
+const stu=l=>{const o={};l.forEach(r=>o[r[4]]=(o[r[4]]||0)+1);return Object.entries(o).sort((a,b)=>b[1]-a[1]||(a[0]<b[0]?-1:1))};
+const topOf=(a,l)=>{const i=a.indexOf(Math.max(...a));return[l[i],a[i]]};
+const kpi=(v,l)=>`<div class="kpi"><b>${v}</b><span>${l}</span></div>`;
+const tip='<div class="tip">المس عمودًا أو شريحة لعرض التفاصيل</div>';
+const legend=s=>'<div class="lg">'+s.map(x=>`<span><i style="background:${x.c}"></i>${x.n}</span>`).join('')+'</div>';
+function bars(labels,series){
+  const W=600,H=250,L=28,B=30,T=10,n=labels.length,tot=labels.map((_,j)=>sum(series.map(s=>s.v[j])));
+  const step=Math.ceil(Math.max(...tot,1)/4),tp=step*4,bw=(W-L)/n,w=Math.min(bw*.7,46);let g='';
+  for(let k=0;k<=4;k++){const y=T+(H-T-B)*(1-k/4);g+=`<line x1="${L}" x2="${W}" y1="${y}" y2="${y}" class="gl"/><text x="${L-4}" y="${y+4}" class="ax" text-anchor="end">${step*k}</text>`}
+  labels.forEach((lb,j)=>{let acc=0;const x=L+bw*j+(bw-w)/2;
+    series.forEach(s=>{const v=s.v[j];if(!v)return;const h=(H-T-B)*v/tp;acc+=v;g+=`<rect x="${x}" y="${H-B-(H-T-B)*acc/tp}" width="${w}" height="${h}" rx="2" fill="${s.c}" class="hit" data-t="${lb} · ${s.n}: ${v} (المجموع ${tot[j]})"/>`});
+    if(j%Math.ceil(n/12)==0)g+=`<text x="${x+w/2}" y="${H-12}" class="ax" text-anchor="middle">${lb}</text>`});
+  return `<svg viewBox="0 0 ${W} ${H}">${g}</svg>`;
+}
+function donut(items){
+  items=items.filter(x=>x.v>0);const t=sum(items.map(x=>x.v)),R=60,Cc=2*Math.PI*R;let off=0,g='';
+  items.forEach(x=>{const l=Cc*x.v/t;g+=`<circle cx="100" cy="100" r="${R}" fill="none" stroke="${x.c}" stroke-width="34" stroke-dasharray="${l} ${Cc-l}" stroke-dashoffset="${-off}" transform="rotate(-90 100 100)" class="hit" data-t="${x.n}: ${x.v} (${(100*x.v/t).toFixed(0)}٪)"/>`;off+=l});
+  return `<svg viewBox="0 0 200 200" style="max-width:240px;margin:auto">${g}<text x="100" y="106" text-anchor="middle" style="fill:var(--tx);font-size:20px;font-weight:700">${t}</text></svg>`;
+}
+function line(labels,vals){
+  const W=600,H=220,L=28,B=26,T=10,n=labels.length,mx=Math.max(...vals,1);let pts='',dots='',tx='';
+  labels.forEach((lb,j)=>{const x=L+(W-L-10)*j/(n-1),y=H-B-(H-T-B)*vals[j]/mx;pts+=`${x},${y} `;
+    dots+=`<circle cx="${x}" cy="${y}" r="5" fill="${C[0]}" class="hit" data-t="${lb}: ${vals[j]} استدعاء"/>`;
+    if(j%Math.ceil(n/7)==0)tx+=`<text x="${x}" y="${H-8}" class="ax" text-anchor="middle">${lb}</text>`});
+  return `<svg viewBox="0 0 ${W} ${H}"><line x1="${L}" x2="${W}" y1="${H-B}" y2="${H-B}" class="gl"/><polyline points="${pts}" fill="none" stroke="${C[0]}" stroke-width="2.5"/>${dots}${tx}<text x="${L-4}" y="${T+8}" class="ax" text-anchor="end">${mx}</text></svg>`;
+}
+
+const card=(t,body,lg)=>`<div class="card"><h3>${t}</h3>${body}${lg||''}${tip}</div>`;
+const dlg=l=>{const c=dcnt(l);return legend(DK.map((k,i)=>({n:'الدرجة '+DG[k],c:DC[k]})).filter((_,i)=>c[i]>0))};
+const dser=(keys,f)=>DK.map(k=>({n:'الدرجة '+DG[k],c:DC[k],v:keys.map(x=>f(x).filter(r=>r[5]==k).length)})).filter(x=>x.v.some(v=>v>0));
+const tdon=l=>{const c=tcnt(l);return donut(T.map((t,i)=>({n:t,c:C[i],v:c[i]})).filter(x=>x.v>0))};
+const tlg=l=>{const c=tcnt(l);return legend(T.map((t,i)=>({n:t,c:C[i]})).filter((_,i)=>c[i]>0))};
+const stTable=(st,n,L)=>`<div class="tw"><table><thead><tr><th>#</th><th>الطالبة</th><th>عدد المخالفات</th><th>مجموع الخصم</th></tr></thead><tbody>${st.slice(0,n).map((x,i)=>`<tr><td>${i+1}</td><td>${x[0]}</td><td><b>${x[1]}</b></td><td>${ded(L.filter(r=>r[4]==x[0]))}</td></tr>`).join('')}</tbody></table></div>`;
+const typeTable=l=>{const c=tcnt(l);return `<div class="tw"><table><thead><tr><th>المخالفة</th><th>العدد</th><th>الخصم</th></tr></thead><tbody>${T.map((t,i)=>c[i]?`<tr><td>${t}</td><td><b>${c[i]}</b></td><td>${ded(l.filter(r=>r[3]==i))}</td></tr>`:'').join('')}</tbody><tfoot><tr><td>الإجمالي</td><td>${l.length}</td><td>${ded(l)}</td></tr></tfoot></table></div>`};
+const yN=y=>R.filter(r=>r[0]==y).length;
+const NOTE='<div class="note">⚠ الأسماء والتواريخ مقروءة من صور التقرير؛ يُرجى مراجعتها مع النسخة الأصلية قبل الاعتماد. الملف يحتوي أسماء طالبات فلا يُنشر على رابط عام.</div>';
+function cover(){
+  const blk=y=>{const I=IDX[y];return `<h3 style="margin:14px 0 4px;color:var(--ac)">${ar(y)}هـ · ${yN(y)} مخالفة</h3><div class="toc"><button data-go="${I.dash}">لوحة المتابعة · فلترة حسب الشهر ونوع المخالفة</button><button data-go="${I.sum}">الملخص العام</button>${YM[y].map(m=>`<button data-go="${I.m[m]}">شهر ${ar(m)} · ${R.filter(r=>r[0]==y&&r[1]==m).length} مخالفة</button>`).join('')}</div>`};
+  return `<h1>المخالفات السلوكية</h1><p class="sub">العامان ١٤٤٧ و١٤٤٨هـ</p><p class="sub" style="margin-top:2px">منسقات نور: حمامة الزهراني · رهف العماري</p><div class="big">${R.length}</div><p class="sub">إجمالي المخالفات المسجلة</p><p class="sub" style="font-size:.78rem">التواريخ الميلادية بحسب تقويم أم القرى، وقد تختلف يومًا واحدًا. المخالفة من الدرجة الخامسة خصمها ١٥ درجة.</p>${NOTE}<button class="prbtn" data-print="1">🖨 طباعة / حفظ PDF</button>${blk(1447)}${blk(1448)}`}
+function divider(y){ctx(y);const e=M[M.length-1];
+  return `<div style="min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center"><p class="sub">المخالفات السلوكية</p><div class="big" style="font-size:5rem">${ar(y)}هـ</div><p class="sub">الأشهر ${M.map(ar).join('، ')}</p><p class="sub">الموافق: ${gfmt(gdt(y,M[0],1),true)} – ${gfmt(gdt(y,e,GS[y][e][3]),true)}</p><p class="sub" style="margin-top:2px">منسقات نور: حمامة الزهراني · رهف العماري</p><div class="kpis" style="width:100%;max-width:440px">${kpi(RS.length,'عدد المخالفات')}${kpi(stu(RS).length,'عدد الطالبات')}${kpi(ded(RS),'مجموع الخصم')}</div><button class="prbtn" data-go="${IDX[y].dash}">ابدأ ◀</button></div>`}
+function summary(){
+  const n=RS.length,st=stu(RS),tt=topOf(tcnt(RS),T),rep=st.filter(x=>x[1]>=2).length;
+  return `<h2>الملخص العام · ${ar(cy)}هـ</h2><div class="kpis">${kpi(n,'عدد المخالفات')}${kpi(st.length,'عدد الطالبات')}${kpi(rep,'مكرّرات (٢ فأكثر)')}${kpi(ded(RS),'مجموع الخصم')}</div>
+  <div class="grid">${card('كل شهر حسب الدرجة',bars(M.map(m=>'شهر '+m),dser(M,m=>rm(m))),dlg(RS))}${card('نسبة كل مخالفة',tdon(RS),tlg(RS))}</div>
+  <div class="grid"><div class="card"><h3>أكثر الطالبات تكراراً</h3>${stTable(st,10,RS)}</div><div class="card"><h3>المخالفات وخصمها</h3>${typeTable(RS)}</div></div>
+  <div class="card"><h3>الأشهر والدرجات</h3><div class="tw"><table><thead><tr><th>الشهر</th>${DK.map(k=>'<th>'+DG[k]+'</th>').join('')}<th>المخالفات</th><th>الخصم</th></tr></thead><tbody>${M.map(m=>{const l=rm(m);return `<tr><td>${ar(m)}</td>${dcnt(l).map(x=>'<td>'+(x||'·')+'</td>').join('')}<td><b>${l.length}</b></td><td>${ded(l)}</td></tr>`}).join('')}</tbody></table></div></div>`;
+}
+function month(m){
+  const L=rm(m),ds=[...new Set(L.map(r=>r[2]))].sort((a,b)=>a-b),st=stu(L),tt=topOf(tcnt(L),T);
+  const rows=L.slice().sort((a,b)=>a[2]-b[2]||a[3]-b[3]);
+  return `<h2>شهر ${ar(m)} · ${ar(cy)}هـ</h2><p class="sub">الموافق: ${grange(cy,m)}</p><div class="kpis">${kpi(L.length,'عدد المخالفات')}${kpi(st.length,'عدد الطالبات')}${kpi(ded(L),'مجموع الخصم')}${kpi(tt[0],'أكثر مخالفة ('+tt[1]+')')}</div>
+  <div class="grid">${card('حسب اليوم والدرجة',bars(ds.map(d=>'يوم '+d),dser(ds,d=>L.filter(r=>r[2]==d))),dlg(L))}${card('نسبة كل مخالفة',tdon(L),tlg(L))}</div>
+  <div class="card"><div class="tw"><table><thead><tr><th>التاريخ الهجري</th><th>التاريخ الميلادي</th><th>الطالبة</th><th>المخالفة</th><th>الدرجة</th><th>الخصم</th></tr></thead><tbody>${rows.map(r=>`<tr><td style="white-space:nowrap">${ar(cy)}/${ar(m)}/${ar(r[2])}هـ</td><td style="white-space:nowrap">${gfmt(gdt(cy,m,r[2]),true)}</td><td>${r[4]}</td><td>${T[r[3]]}</td><td>${DG[r[5]]}</td><td>${r[5]}</td></tr>`).join('')}</tbody></table></div></div>`;
+}
+function dash(){
+  const chips=`<h2>لوحة المتابعة · ${ar(cy)}هـ</h2><div class="chips"><b>الشهر:</b><button data-fm="all" class="${F.m.size==M.length?'on':''}">الكل</button>${M.map(m=>`<button data-fm="${m}" class="${F.m.size<M.length&&F.m.has(m)?'on':''}">شهر ${m}</button>`).join('')}</div><div class="chips"><b>المخالفة:</b><button data-ft="all" class="${F.t.size==T.length?'on':''}">الكل</button>${ALLT.filter(i=>RS.some(r=>r[3]==i)).map(i=>`<button data-ft="${i}" class="${F.t.size<T.length&&F.t.has(i)?'on':''}">${T[i]}</button>`).join('')}</div>`;
+  const fl=RS.filter(r=>F.m.has(r[1])&&F.t.has(r[3]));
+  if(!fl.length)return chips+'<div class="note">لا توجد مخالفات للاختيار الحالي.</div>';
+  const st=stu(fl),tcs=tcnt(fl),tt=topOf(tcs,T);
+  const keys=[...new Set(fl.map(r=>r[1]*100+r[2]))].sort((a,b)=>a-b);
+  const kf=k=>fl.filter(r=>r[1]*100+r[2]==k);
+  const pk=keys.reduce((a,b)=>kf(b).length>kf(a).length?b:a);const pm=Math.floor(pk/100),pd=pk%100;
+  return chips+`<div class="kpis">${kpi(fl.length,'عدد المخالفات')}${kpi(st.length,'عدد الطالبات')}${kpi(ded(fl),'مجموع الخصم')}${kpi(tt[0],'أكثر مخالفة ('+tt[1]+')')}</div>
+  <div class="grid">${card('حسب اليوم والدرجة',bars(keys.map(k=>(k%100)+'/'+Math.floor(k/100)),dser(keys,kf)),dlg(fl))}${card('نسبة كل مخالفة',tdon(fl),tlg(fl))}</div>
+  <div class="grid"><div class="card"><h3>أبرز ما يلفت</h3><ul class="ins"><li>أكثر مخالفة: ${tt[0]} (${tt[1]} مرة).</li><li>أكثر طالبة تكراراً: ${st[0][0]} بـ ${st[0][1]} من المخالفات.</li><li>أكثر يوم: ${pd}/${pm} (${gfmt(gdt(cy,pm,pd),true)}) بـ ${kf(pk).length} مخالفة.</li><li>الدرجة الثالثة فأعلى: ${fl.filter(r=>r[5]>=3).length} مخالفة.</li></ul></div><div class="card"><h3>أكثر الطالبات تكراراً</h3>${stTable(st,8,fl)}</div></div>`;
+}
+const P=[],PY=[],IDX={};let cur=-1;
+const add=(y,f)=>{P.push(()=>{ctx(y);return f()});PY.push(y)};
+P.push(cover);PY.push(1447);
+[1447,1448].forEach(y=>{const I=IDX[y]={m:{}};I.div=P.length;add(y,()=>divider(y));I.dash=P.length;add(y,dash);I.sum=P.length;add(y,summary);YM[y].forEach(m=>{I.m[m]=P.length;add(y,()=>month(m))})});
+const pg=document.getElementById('page');
+document.getElementById('dots').innerHTML=P.map((_,i)=>`<b data-go="${i}"></b>`).join('');
+function go(i,dir){
+  if(i<0||i>=P.length)return;dir=dir||(i>=cur?'n':'p');cur=i;pg.innerHTML=P[i]();pg.scrollTop=0;
+  pg.className='';void pg.offsetWidth;pg.className=dir;
+  document.querySelectorAll('#dots b').forEach((b,j)=>b.classList.toggle('on',j==i));
+  document.getElementById('pv').disabled=i==0;document.getElementById('nx').disabled=i==P.length-1;
+  try{history.replaceState(null,'','#p'+i)}catch(_){}
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-t]');
+  if(t){const c=t.closest('.card');c.querySelector('.tip').textContent=t.dataset.t;c.querySelectorAll('.sel').forEach(x=>{x.style.opacity='';x.classList.remove('sel')});c.querySelectorAll('[data-t]').forEach(x=>x.style.opacity=.45);t.style.opacity=1;t.classList.add('sel');return}
+  const fm=e.target.closest('[data-fm]'),ft=e.target.closest('[data-ft]');
+  if(fm||ft){ctx(PY[cur]);const k=fm?'m':'t',all=fm?M:ALLT,v=(fm||ft).dataset[fm?'fm':'ft'];
+    if(v==='all')F[k]=new Set(all);else{const n=+v;if(F[k].size==all.length)F[k]=new Set([n]);else{F[k].has(n)?F[k].delete(n):F[k].add(n);if(!F[k].size)F[k]=new Set(all)}}
+    const y=pg.scrollTop;pg.innerHTML=P[cur]();pg.scrollTop=y;return}
+  if(e.target.closest('[data-print]')){window.print();return}
+  const g=e.target.closest('[data-go]');if(g)go(+g.dataset.go);
+});
+document.getElementById('pv').onclick=()=>go(cur-1,'p');document.getElementById('nx').onclick=()=>go(cur+1,'n');
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(cur+1,'n');if(e.key==='ArrowRight')go(cur-1,'p')});
+let sx=null;pg.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+pg.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;if(dx>70)go(cur+1,'n');if(dx<-70)go(cur-1,'p')});
+function fillPrint(){let h='';[1447,1448].forEach(y=>{ctx(y);h+='<section>'+divider(y)+'</section><section>'+summary()+'</section>'+M.map(m=>'<section>'+month(m)+'</section>').join('')});document.getElementById('pr').innerHTML=h}
+window.addEventListener('beforeprint',fillPrint);window.addEventListener('afterprint',()=>{document.getElementById('pr').innerHTML=''});
+const h=parseInt((location.hash||'').replace('#p',''));go(isNaN(h)?0:h,'n');
+</script>
+</body>
+</html>
